@@ -1,5 +1,6 @@
 class Product    
-    def initialize(azul,rojo,verde)
+    def initialize(name,azul,rojo,verde)
+        @name=name
         @azul=azul
         @verde=verde
         @rojo=rojo
@@ -11,7 +12,7 @@ def open(file,array)
         File.open(file, 'r') do |f|    
             f.each_line do |line|
                 words = line.split(',')
-                array.push(Product.new(words[1].chomp,words[2].chomp,words[3].chomp))
+                array.push(Product.new(words[0].chomp,words[1].chomp,words[2].chomp,words[3].chomp))
             end
             array
         end        
