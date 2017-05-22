@@ -17,10 +17,10 @@ def open(file,array)
         puts msg
     end
 end
-def save(file,producto)
+def save(file,name,azul,rojo,verde)
    begin
         File.open(file, 'a') do |f|    
-            f.puts "#{producto}"
+            f.puts "#{name},#{azul},#{verde},#{rojo}"
         end        
     rescue Exception => msg
         puts msg
@@ -31,9 +31,15 @@ file='bodega.txt'
 array = Array.new()
 array = open(file,array) 
 
-puts "Ingrese producto con su stock separado por comas ej(producto,1,2,3) NR para no registrar en la bodega:\n\n\n"
-producto=gets.chomp 
-save(file,producto)
+puts "Ingrese nombre del producto\n"
+name=gets.chomp
+puts "Ingrese stock color azul\n"
+azul=gets.chomp
+puts "Ingrese stock color rojo\n"
+rojo=gets.chomp
+puts "Ingrese stock color verde\n"
+verde=gets.chomp 
+save(file,name,azul,rojo,verde)
 
 
 
