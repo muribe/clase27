@@ -19,10 +19,8 @@ def save(file,value)
 end
 def read(file)
     begin
-        File.open(file, 'r') do |f|    
-            f.each_line do |line|
-                puts "#{line}"
-            end
+        File.open(file, 'r').each_line do |line|    
+            puts "#{line}"
         end        
     rescue Exception => msg
         puts msg

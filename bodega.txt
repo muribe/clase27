@@ -3,3 +3,6 @@ Producto2,20,0,3
 Producto3,4,8,0
 Producto8,1,2,NR
 Producto12,NR,2,NR
+t,3,4,5
+t,3,4,5
+r,4,5,6

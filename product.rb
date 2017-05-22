@@ -9,13 +9,10 @@ end
 
 def open(file,array)
     begin
-        File.open(file, 'r') do |f|    
-            f.each_line do |line|
-                words = line.split(',')
-                array.push(Product.new(words[0].chomp,words[1].chomp,words[2].chomp,words[3].chomp))
-            end
-            array
-        end        
+        File.open(file, 'r').each_line do |line|    
+            array.push(Product.new(*line.chomp.split(',')))
+        end      
+        array
     rescue Exception => msg
         puts msg
     end
