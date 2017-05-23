@@ -46,12 +46,12 @@ loop do
         end        
     when "guardar"
         File.truncate(file, 0)        
-        cartas.each do |value|
-            save(file,value)
+        cartas.each do |object|
+            save(file,object)
         end
     when "mostrar"
-        cartas.each do |value|
-            puts "#{value.number} #{value.pinta}\n"
+        cartas.each do |object|
+            puts "#{object.number} #{object.pinta}\n"
         end
     when "leer"  
         read(file)
